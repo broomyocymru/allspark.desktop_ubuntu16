@@ -14,8 +14,10 @@
     name: xfce4
     state: present
 
-- name: Create new xsession
+- name: Create xsession
   command: echo xfce4-session >/root/.xsession
+
+- name: Start xsession
   command: sed -i '/\/etc\/X11\/Xsession/i xfce4-session' /etc/xrdp/startwm.sh
   notify:
     - restart xrdp
