@@ -15,7 +15,6 @@
     state: present
 
 - name: Create new xsession
-  sudo: yes
   command: echo xfce4-session >/root/.xsession
   command: sed -i '/\/etc\/X11\/Xsession/i xfce4-session' /etc/xrdp/startwm.sh
   notify:
